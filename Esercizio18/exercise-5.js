@@ -1,7 +1,4 @@
-function memoize(fn) {
-  let cache = {};
-  // ...
-}
+function memoize(fn) {}
 
 function factorial(x) {
   if (x === 0) {

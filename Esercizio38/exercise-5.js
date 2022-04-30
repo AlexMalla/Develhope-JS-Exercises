@@ -18,30 +18,25 @@ class BankAccount {
   }
 }
 
-class bankAccountVip extends BankAccount {
-  #vipAmount = 0;
+class BankAccountVip extends BankAccount {
+  #amountVip = 0;
   constructor(initialAmount) {
     super(initialAmount);
-    this.#vipAmount = initialAmount;
+    this.#amountVip = initialAmount;
   }
   deposit(depositAmount) {
-  if (this.#vipAmount >= 1000) {
-    this.#vipAmount += depositAmount + (depositAmount / 100) * 3;
-    return this.#vipAmount;
-  }
-    else {
-      this.#vipAmount += depositAmount;
-      return this.#vipAmount;
+    if (this.#amountVip >= 1000) {
+      this.#amountVip += depositAmount + (depositAmount / 100) * 3;
+      return this.#amountVip;
     }
-  
   }
   withdraw(withdrawAmount) {
-    this.#vipAmount -= withdrawAmount;
-    return this.#vipAmount;
-    }
-   view() {
-     console.log(this.#vipAmount);
-   }
+    this.#amountVip -= withdrawAmount;
+    return this.#amountVip;
+  }
+  view() {
+    console.log(this.#amountVip);
+  }
 }
 
 const bankAccountVip = new BankAccountVip(1000);
