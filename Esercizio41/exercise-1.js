@@ -7,12 +7,22 @@ class BankAccount {
 
   deposit(amount) {
     // throw an exception if amount is negative
-    this.#amount += amount;
+    if (amount < 0) {
+      console.log("Error: you cannot deposit negatives amounts");
+    } else {
+      this.#amount += amount;
+    }
   }
 
   withdraw(amount) {
     // throw an exception if amount is negative or if withdrawal amount is greater than current amount
-    this.#amount -= amount;
+    if (amount < 0) {
+      console.log("Error: you cannot withdraw negatives amounts.");
+    } else if (amount > this.#amount) {
+      console.log("Error: insufficients funds.");
+    } else {
+      this.#amount -= amount;
+    }
   }
 
   view() {

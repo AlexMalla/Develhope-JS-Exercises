@@ -1,3 +1,24 @@
+class error {
+  constructor(alert) {
+    this.alert = alert;
+    this.name = "Error";
+  }
+}
+
+class NegativeAmountError extends error {
+  constructor(alert) {
+    super(alert);
+    this.name = "Error: you cannot deposit negatives amounts.";
+  }
+}
+
+class WithdrawNotPermittedError extends error {
+  constructor(alert) {
+    super(alert);
+    this.name = "Error: you cannot witdraw negatives amounts.";
+  }
+}
+
 class BankAccount {
   #amount = 0;
 
@@ -7,7 +28,7 @@ class BankAccount {
 
   deposit(amount) {
     if (amount < 0) {
-      throw new Error('The amount provided cannot be negative'); // Use custom Error class
+      throw new Error("The amount provided cannot be negative"); // Use custom Error class
     }
 
     this.#amount += amount;
@@ -15,11 +36,11 @@ class BankAccount {
 
   withdraw(amount) {
     if (amount < 0) {
-      throw new Error('The amount provided cannot be negative'); // Use custom Error class
+      throw new Error("The amount provided cannot be negative"); // Use custom Error class
     }
 
     if (this.#amount < amount) {
-      throw new Error('You cannot withdraw more than account balance'); // Use custom Error class
+      throw new Error("You cannot withdraw more than account balance"); // Use custom Error class
     }
 
     this.#amount -= amount;
@@ -37,5 +58,5 @@ try {
   bankAccount.withdraw(10000);
   bankAccount.view();
 } catch (e) {
-  console.log('Something went wrong during bank account operations');
+  console.log(`${e.name}: ${e.message}`);
 }
