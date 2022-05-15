@@ -11,5 +11,24 @@
 </html>
 
 <script>
-  // code here
+ document.querySelector('#add-row').addEventListener('click', addRow);
+
+function addRow() {
+
+  let row = document.createElement('tr');
+  document.querySelector('#person-table').append(row)
+
+  let tdName = document.createElement('td');
+  tdName.innerText = 'first name';
+
+  let tdSurname = document.createElement('td');
+  tdSurname.innerText = 'last name';
+
+  let tdAge = document.createElement('td');
+  tdAge.innerText = 'age';
+
+  row.append(tdName);
+  row.append(tdSurname);
+  row.append(tdAge);
+}
 </script>

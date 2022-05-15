@@ -5,5 +5,31 @@
 </html>
 
 <script>
-  // code here
+  async function getTodos(){
+  try {
+  const todo = await fetch('https://jsonplaceholder.typicode.com/todos/4')
+  .then((response)=>response.json())
+  return todo
+  } catch(err){
+    console.error('Fetch error: ', err)
+  }
+}
+getTodos()   
+   .then((data )=>{
+    const title = document.createElement('h2')
+    title.innerHTML = data.title
+    const input = document.createElement('input')
+    input.setAttribute('type','checkbox') 
+    if(data.completed){
+      input.setAttribute('checked', '')
+    } else {
+      input.setAttribute('unchecked', '')
+
+    }
+
+    const container = document.getElementById('container')
+    container.append(title)
+    container.append(input)
+  }) 
+  .catch((error)=>console.error('Execution: ',error))
 </script>

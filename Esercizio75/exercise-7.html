@@ -68,8 +68,15 @@
     form.prepend(lastNameInput);
     form.prepend(firstNameInput);
 
+
     form.addEventListener("submit", submitPersonForm);
+    form.addEventListener('personFormLoaded', () => {
+      console.log("Form Loaded")
+    })
+    form.dispatchEvent(personFormLoaded)
+
   }
 
-  window.addEventListener("DOMContentLoaded", initForm);
+  let caricamento = window.addEventListener("DOMContentLoaded", initForm);
+  let personFormLoaded = new CustomEvent('personFormLoaded');
 </script>

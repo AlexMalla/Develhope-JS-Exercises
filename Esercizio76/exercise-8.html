@@ -14,5 +14,13 @@
 </html>
 
 <script>
-  // code here
+  let redText = document.querySelectorAll('.hero-list-item');
+  redText.forEach((element) => {
+    element.addEventListener('mouseover', () => {
+      element.style.backgroundColor = 'red'
+    })
+    element.addEventListener('mouseleave', () => {
+      element.style.backgroundColor = 'transparent'
+    })
+  })
 </script>

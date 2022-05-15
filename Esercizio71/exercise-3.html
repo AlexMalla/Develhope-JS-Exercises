@@ -20,5 +20,9 @@
 </html>
 
 <script>
-  // code here
+  let label = document.getElementsByTagName('label');
+  let data = document.getElementsByClassName('form-input');
+  for (let i = 0; i < 3; i++) {
+    console.log(`${label[i].textContent}  ${data[i].value}`)
+  }
 </script>

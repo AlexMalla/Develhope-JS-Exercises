@@ -2,10 +2,6 @@
 //return person.age >= 18;
 //}
 
-function isAdult(person) {
-  return age >= 18;
-}
-
 const person = {
   id: 1,
   firstName: "Mario",
@@ -13,6 +9,6 @@ const person = {
   age: 25,
 };
 
-let { age } = person;
+const { age: eta } = person;
 
-console.log(isAdult(person));
+console.log(eta >= 18);

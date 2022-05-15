@@ -7,5 +7,14 @@
 </html>
 
 <script>
-  // code here
+async function getTodos(){
+  const list = await fetch('https://jsonplaceholder.typicode.com/todos').then((response)=>response.json())
+  const toDoList= document.querySelector('.todo-list')
+  list.forEach((element)=>{
+    const liNode= document.createElement('li')
+    toDoList.append(liNode)
+    liNode.innerHTML = element.title
+  })
+}
+getTodos()
 </script>

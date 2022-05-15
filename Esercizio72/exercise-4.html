@@ -20,5 +20,21 @@
 </html>
 
 <script>
-  // code here
+    let data = { firstName: "", lastName: "", age: "" };
+  let form = document.querySelector('form');
+  for (let i = 0; i < form.length; i++) {
+    if (form[i].id === 'firstName') {
+      data.firstName = form[i].value;
+    }
+    else
+      if (form[i].id === 'lastName') {
+        data.lastName = form[i].value;
+      }
+      else
+        if (form[i].id === 'age') {
+          data.age = form[i].value;
+        }
+  }
+  document.querySelector('form').setAttribute('user', JSON.stringify(data))
+  console.log(form)
 </script>
