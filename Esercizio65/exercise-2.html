@@ -11,4 +11,8 @@
 </html>
 
 <script>
+document.querySelector('#fetch-post').addEventListener('click', (e) => {
+document.querySelector('#post-title').innerText = localStorage.getItem('post');
+console.log(localStorage.getItem('post'));
+})
 </script>
