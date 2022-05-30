@@ -5,10 +5,6 @@ const person = {
   age: 25,
 };
 
-//for (let item of Object.entries(person)) {
-//console.log(`${item[0]}: ${item[1]}`);
-//}
-
-let { id, ...firstName } = person;
-
-console.log(person);
+for (let [key, value] of Object.entries(person)) {
+  console.log(`${key}: ${value}`);
+}
